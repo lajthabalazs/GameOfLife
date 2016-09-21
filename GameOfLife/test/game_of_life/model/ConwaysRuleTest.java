@@ -7,7 +7,7 @@ public class ConwaysRuleTest {
 
 	@Test
 	public void killSingleCell() {
-		Board board = new Board(1, 1);
+		SquareBoard board = new SquareBoard(1, 1);
 		Cell cell = board.getCell(0, 0);
 		cell.setDead(false);
 		ConwaysRule rule = new ConwaysRule();
@@ -18,7 +18,7 @@ public class ConwaysRuleTest {
 
 	@Test
 	public void killSingleCellInLargeField() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Cell cell = board.getCell(5, 5);
 		cell.setDead(false);
 		ConwaysRule rule = new ConwaysRule();
@@ -29,7 +29,7 @@ public class ConwaysRuleTest {
 
 	@Test
 	public void killCellWithSingleNeighbor() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Cell cell = board.getCell(5, 5);
 		Cell neighbor = board.getCell(4, 5);
 		cell.setDead(false);
@@ -42,7 +42,7 @@ public class ConwaysRuleTest {
 
 	@Test
 	public void killCellWithFourNeighbors() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Cell cell = board.getCell(5, 5);
 		cell.setDead(false);
 
@@ -63,7 +63,7 @@ public class ConwaysRuleTest {
 	
 	@Test
 	public void keepCellWithFourNeighborsDead() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Cell cell = board.getCell(5, 5);
 
 		Cell n1 = board.getCell(4, 5);
@@ -83,7 +83,7 @@ public class ConwaysRuleTest {
 	
 	@Test
 	public void bringCellToLife() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Cell cell = board.getCell(5, 5);
 
 		Cell n1 = board.getCell(4, 5);
@@ -101,7 +101,7 @@ public class ConwaysRuleTest {
 	
 	@Test
 	public void keepCellWithTwoNeighborsAlive() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Cell cell = board.getCell(5, 5);
 		cell.setDead(false);
 		
@@ -118,7 +118,7 @@ public class ConwaysRuleTest {
 	
 	@Test
 	public void keepCellWithThreeNeighborsAlive() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Cell cell = board.getCell(5, 5);
 		cell.setDead(false);
 		

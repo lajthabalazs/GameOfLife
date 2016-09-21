@@ -51,7 +51,7 @@ public class GenericRule implements Rule{
 		return new GenericRule(birthNumbers, surviveNumbers);
 	}
 
-	public void apply(Cell cell, Board board) {
+	public void apply(Cell cell, CartesianBoard board) {
 		Set<Cell> neighbors = board.getNeighbors(cell);
 		int living = 0;
 		for (Cell neighbor : neighbors) {

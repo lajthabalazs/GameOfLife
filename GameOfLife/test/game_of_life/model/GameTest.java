@@ -7,7 +7,7 @@ public class GameTest {
 	
 	@Test
 	public void killSingleCell() {
-		Board board = new Board(1, 1);
+		SquareBoard board = new SquareBoard(1, 1);
 		Game game = new Game(board, new ConwaysRule());
 		Cell cell = game.getBoard().getCell(0, 0);
 		cell.setDead(false);
@@ -17,7 +17,7 @@ public class GameTest {
 	
 	@Test
 	public void killSingleCellInLargeField() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Game game = new Game(board, new ConwaysRule());
 		Cell cell = board.getCell(5, 5);
 		cell.setDead(false);
@@ -27,7 +27,7 @@ public class GameTest {
 	
 	@Test
 	public void killCellWithSingleNeighbor() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Game game = new Game(board, new ConwaysRule());
 		Cell cell = board.getCell(5, 5);
 		Cell neighbor = board.getCell(4, 5);
@@ -39,7 +39,7 @@ public class GameTest {
 	
 	@Test
 	public void killCellWithFourNeighbors() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Game game = new Game(board, new ConwaysRule());
 		Cell cell = board.getCell(5, 5);
 		cell.setDead(false);
@@ -58,7 +58,7 @@ public class GameTest {
 	
 	@Test
 	public void keepCellWithFourNeighborsDead() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Game game = new Game(board, new ConwaysRule());
 		Cell cell = board.getCell(5, 5);
 
@@ -77,7 +77,7 @@ public class GameTest {
 	
 	@Test
 	public void bringCellToLife() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Game game = new Game(board, new ConwaysRule());
 		Cell cell = board.getCell(5, 5);
 
@@ -94,7 +94,7 @@ public class GameTest {
 	
 	@Test
 	public void keepCellWithTwoNeighborsAlive() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Game game = new Game(board, new ConwaysRule());
 		Cell cell = board.getCell(5, 5);
 		cell.setDead(false);
@@ -110,7 +110,7 @@ public class GameTest {
 	
 	@Test
 	public void keepCellWithThreeNeighborsAlive() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Game game = new Game(board, new ConwaysRule());
 		Cell cell = board.getCell(5, 5);
 		cell.setDead(false);

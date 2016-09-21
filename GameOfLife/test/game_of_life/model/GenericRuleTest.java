@@ -27,7 +27,7 @@ public class GenericRuleTest {
 
 	@Test
 	public void birthTest() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Cell cell = board.getCell(5, 5);
 		Rule rule = GenericRule.parse("B1234/S8");
 		Cell n1 = board.getCell(4, 5);
@@ -46,7 +46,7 @@ public class GenericRuleTest {
 
 	@Test
 	public void survivalTest() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Cell cell = board.getCell(5, 5);
 		cell.setDead(false);
 		Rule rule = GenericRule.parse("B123/S48");
@@ -66,7 +66,7 @@ public class GenericRuleTest {
 
 	@Test
 	public void notBirthTest() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Cell cell = board.getCell(5, 5);
 		Rule rule = GenericRule.parse("B01245678/S8");
 		Cell n1 = board.getCell(4, 5);
@@ -83,7 +83,7 @@ public class GenericRuleTest {
 	
 	@Test
 	public void deathTest() {
-		Board board = new Board(10, 10);
+		SquareBoard board = new SquareBoard(10, 10);
 		Cell cell = board.getCell(5, 5);
 		cell.setDead(false);
 		Rule rule = GenericRule.parse("B1234/S12456780");

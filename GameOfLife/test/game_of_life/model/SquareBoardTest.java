@@ -2,20 +2,20 @@ package game_of_life.model;
 
 import org.junit.Test;
 
-import game_of_life.model.Board;
+import game_of_life.model.SquareBoard;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class BoardTest {
+public class SquareBoardTest {
 	
 	@Test
 	public void dimensions() {
 		final int width = 23;
 		final int height = 37;
-		Board board = new Board(width, height);
+		SquareBoard board = new SquareBoard(width, height);
 		assertEquals(width, board.getWidth());
 		assertEquals(height, board.getHeight());
 		assertEquals(width * height, board.getCells().size());
@@ -25,7 +25,7 @@ public class BoardTest {
 	public void isInPlace() {
 		final int width = 19;
 		final int height = 43;
-		Board board = new Board(width, height);
+		SquareBoard board = new SquareBoard(width, height);
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y ++) {
 				Cell cell = board.getCell(x, y);
@@ -39,7 +39,7 @@ public class BoardTest {
 	public void neighborsInTopLeftCorner() {
 		final int width = 19;
 		final int height = 43;
-		Board board = new Board(width, height);
+		SquareBoard board = new SquareBoard(width, height);
 		Set<Cell> expected = new HashSet<>();
 		expected.add(board.getCell(1, 0));
 		expected.add(board.getCell(0, 1));
@@ -53,7 +53,7 @@ public class BoardTest {
 	public void neighborsInTopRightCorner() {
 		final int width = 19;
 		final int height = 43;
-		Board board = new Board(width, height);
+		SquareBoard board = new SquareBoard(width, height);
 		Set<Cell> expected = new HashSet<>();
 		expected.add(board.getCell(17, 0));
 		expected.add(board.getCell(17, 1));
@@ -66,7 +66,7 @@ public class BoardTest {
 	public void neighborsInBottomLeftCorner() {
 		final int width = 19;
 		final int height = 43;
-		Board board = new Board(width, height);
+		SquareBoard board = new SquareBoard(width, height);
 		Set<Cell> expected = new HashSet<>();
 		expected.add(board.getCell(0, 41));
 		expected.add(board.getCell(1, 41));
@@ -80,7 +80,7 @@ public class BoardTest {
 	public void neighborsInBottomRightCorner() {
 		final int width = 19;
 		final int height = 43;
-		Board board = new Board(width, height);
+		SquareBoard board = new SquareBoard(width, height);
 		Set<Cell> expected = new HashSet<>();
 		expected.add(board.getCell(17, 41));
 		expected.add(board.getCell(18, 41));

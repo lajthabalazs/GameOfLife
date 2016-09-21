@@ -1,6 +1,6 @@
 package game_of_life;
 
-import game_of_life.model.Board;
+import game_of_life.model.TorusBoard;
 import game_of_life.model.Game;
 import game_of_life.model.ConwaysRule;
 import game_of_life.view.GameView;
@@ -22,6 +22,6 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		new GameView(new Game(new Board(width, height), new ConwaysRule()));
+		new GameView(new Game(new TorusBoard(width, height), new ConwaysRule()));
 	}
 }
